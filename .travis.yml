@@ -12,7 +12,7 @@ matrix:
         - phpenv rehash
       script:
         - vendor/bin/phpunit --coverage-text
-        - phpcs --ignore=app/Http/Controllers/Auth,app/Http/Controllers/Controller.php  app/Http/Controllers
+        # - phpcs --ignore=app/Http/Controllers/Auth,app/Http/Controllers/Controller.php  app/Http/Controllers
     
     - language: node_js
       node_js: "8"  
