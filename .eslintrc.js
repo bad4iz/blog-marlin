@@ -1,3 +1,16 @@
 module.exports = {
-    "extends": "plugin:vue/recommended"
-};
+  root: true,
+  parserOptions: {
+    parser: 'babel-eslint',
+    ecmaVersion: 2017,
+    sourceType: 'module'
+  },
+  env: {
+    node: true,
+    browser: true
+  },
+  extends: ['plugin:vue/recommended', 'standard'],
+  globals: {
+    docsearch: true
+  }
+}
