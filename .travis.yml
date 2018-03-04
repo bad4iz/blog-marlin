@@ -12,7 +12,7 @@ matrix:
         - phpenv rehash
       script:
         - vendor/bin/phpunit --coverage-text
-        - phpcs
+        - phpcs app/Http/Controllers
     
     
     - language: node_js
