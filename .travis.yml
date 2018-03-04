@@ -10,12 +10,10 @@ matrix:
         # - cp .env.travis .env
         # - pear install pear/PHP_CodeSniffer
         # - phpenv rehash
-        - mysql -e 'CREATE DATABASE travis_test;'
-        - cp .env.travis .env
-        - composer self-update
-        - composer install --no-interaction
-        - php artisan key:generate
-        - php artisan migrate
+          - cp .env.travis .env
+          - mysql -e 'create database homestead_test;'
+          - composer self-update
+          - composer install --no-interaction
       script:
         - vendor/bin/phpunit
         # - vendor/bin/phpunit --coverage-text
