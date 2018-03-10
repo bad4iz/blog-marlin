@@ -35,5 +35,8 @@
     "jquery": "^3.2",
     "popper.js": "^1.12",
     "laravel-mix": "^2.0"
+  },
+  "require-dev": {
+    "heroku/heroku-buildpack-php": "*"
   }
 }
