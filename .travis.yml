@@ -1,25 +1,26 @@
 os:
-  - linux
+- linux
 matrix:
   include:
-    - language: php
-      php: "7.2"
-      before_script:
-        - composer self-update
-        - composer install --no-interaction
-        - cp .env.travis .env
-        - pear install pear/PHP_CodeSniffer
-        - phpenv rehash
-      script:
-        - vendor/bin/phpunit --coverage-text
-        # - phpcs --ignore=app/Http/Controllers/Auth,app/Http/Controllers/Controller.php  app/Http/Controllers
-    
-    - language: node_js
-      node_js: "8"  
-
-      before_script:
-        - yarn
-
-      script:
-        - yarn run lint
-        - yarn run production
+  - language: php
+    php: '7.2'
+    before_script:
+    - composer self-update
+    - composer install --no-interaction
+    - cp .env.travis .env
+    - pear install pear/PHP_CodeSniffer
+    - phpenv rehash
+    script:
+    - vendor/bin/phpunit --coverage-text
+  - language: node_js
+    node_js: '8'
+    before_script:
+    - yarn
+    script:
+    - yarn run lint
+    - yarn run production
+deploy:
+  api_key:
+    secure: cJdNgfRCnIrFA7E+2KmCMvJh8sRFrMg/DBjcU0uC52+N9nqTSd6GaJjDlJkYjclU8eN0kYAEM4FNthQay9kSSTd+frSDGY0NFMm3gEzg0Qwaw+9l3BlFem2p6LgfCdH0jWwzJoAYUdRjHvK2y5r0bte3PuMlq2fDxSyGQe2kIsbK195fwC3eSTQBgFLYQWJyky3pGQEvzeQyFcTRE847/9LlGi2tdK7kbVyD4Rbo6xO7yTGuwI1ZHPfywwHllBfQRys+VBXCO/14QEkI5fjZ7WNRCa72KW5jgnDoXC0DouuSZK/2qujYA2tS6Bp34J9aWpNa88ifiPHIcGcLJUpcRfSCjmpvAK28NRfKvE/SSgN3l03g9WNsBFyrKmNiP2YMdY2R9gOsxM0xD3KlYrBWwf46G584lwgW7jSalEzsMtW6VndADMSoeudXCUfLeRui296+guJKE4HZMJUT/si6KmQH1vNunOeQ4vGA59pafvLsc0Odu1+vae/zHLHXG2DfCYvYZ3OML6qyivmSXcSZlZTj7O5UJmBh7nmbNte5RQ1gyODHB45+pb5hlHg8TUZqLojb3fyFSYrKFH7LEk+eYqBV9ypCCug3L/48FYozsocqu7I3+j/haeyU4Z83lDICAILZsEm8vguHV3ZpzhdXyVBUkiA2GF9U5cDrYKuXx4w=
+  run:
+  - "npm run prod"
