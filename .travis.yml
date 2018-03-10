@@ -26,4 +26,4 @@ deploy:
   app: blog-marlin
   on:
     repo: bad4iz/blog-marlin
-  run: php artisan migrate
+
