@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    пятый урок
+                    шестой урок
                 </div>
 
                 <div class="links">
