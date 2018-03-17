@@ -47,6 +47,12 @@ class Post extends Model
         ];
     }
 
+    /**
+     * добавляем пост
+     *
+     * @param $fields
+     * @return static
+     */
     public static function add($fields){
         $post = new static;
 
