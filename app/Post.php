@@ -63,6 +63,10 @@ class Post extends Model
         return $post;
     }
 
+    /**
+     * редактирование поста
+     * @param $fields
+     */
     public function edit($fields){
         $this->fill($fields);
         $this->save();
