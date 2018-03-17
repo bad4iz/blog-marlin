@@ -56,4 +56,9 @@ class Post extends Model
 
         return $post;
     }
+
+    public function edit($fields){
+        $this->fill($fields);
+        $this->save();
+    }
 }
