@@ -11,6 +11,8 @@ class Post extends Model
 {
     use Sluggable;
 
+    protected $fillable = ['title', 'content'];
+
     public function category()
     {
         return $this->hasOne(Category::class);
@@ -43,5 +45,14 @@ class Post extends Model
                 'source' => 'title'
             ]
         ];
+    }
+
+    public static function add($fields){
+        $post = new static;
+
+        $post->fill($fields);
+        $post->save();
+
+        return $post;
     }
 }
